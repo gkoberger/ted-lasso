@@ -6,6 +6,10 @@ $.page('index', function () {
 
   $('.red').removeClass('red');
 
+  $('#text').blur(function() {
+    $('#text').val($(this).val().toUpperCase().replace(/[^A-Z!-_?]/g, ''));
+  });
+
   $('#go button').click(function () {
     $('#body-parent').load('/?text=' + $('#text').val() + ' #body', () => {
       $('.overflow').each(function () {
