@@ -12,3 +12,88 @@ a
 #pg-index
   p
     color #888
+
+.line
+  overflow hidden
+.section
+  padding 4px
+  background #163267
+  float left
+.row
+  height 18px
+.chair
+  width 15px
+  display inline-block
+  height 20px
+  background red
+  border-radius 2px
+  position relative
+  margin 0 1px
+  background linear-gradient(#e99189, #b24038)
+  blue = darken(#1468e0, 10%)
+  //background linear-gradient(lighten(blue, 30%), blue)
+  background blue
+  transition background 1s linear
+  &.red
+    red = darken(#ff0000, 10%)
+    //background linear-gradient(lighten(red, 30%), red)
+    background red
+  .overflow
+    background linear-gradient(rgba(#000, 0), rgba(#000, 0.15))
+    &:after
+      width 100%
+      height 100%
+      content ""
+      display block
+      position absolute
+      top 0
+      left 0
+    &.seat-1
+      &:after
+        background rgba(255,255,255,0.1)
+    &.seat-2
+      &:after
+        background rgba(255,255,255,0.2)
+    width 100%
+    height 100%
+    position relative
+    &:before
+      position absolute
+      content ""
+      height 2px
+      display block
+      width 100%
+      top 12px
+      z-index 10
+      background rgba(0,0,0,0.1)
+
+
+
+img
+  height 33px
+  position absolute
+  top -28px
+  left -18px
+
+#body
+  float left
+  position absolute
+  #go
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background #ffffff61
+    z-index 1000
+    button
+      background #e50100
+      left 50%
+      top 390px
+      position absolute
+      transform translateX(-50%)
+      padding 20px 40px
+      border-radius 10px
+      border 0 none
+      color #fff
+      font-size 40px

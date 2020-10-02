@@ -1,5 +1,27 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Ted Lasso Intro Generator
+
+  form(method="GET")
+    input(type="text" value=text name="text")
+    button(type="submit") GO
+  br
+
+  audio(src="/images/music.mp3")
+
+  mixin section(t)
+    .section
+      for i, r in rows
+        .row
+          for i, c in cols
+            .chair(class=on(t, r, c))
+              .overflow
+
+  #body
+    #go
+      button Play!
+    for l in [0,1,2]
+      .line
+        for t in out
+          +section((l === 1 ? t : ''))
