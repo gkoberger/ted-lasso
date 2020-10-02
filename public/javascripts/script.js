@@ -1,8 +1,21 @@
 $.page('index', function () {
-  $('.overflow').each(function () {
-    var i = Math.floor(Math.random() * 5);
-    $(this).addClass(`seat-${i}`);
-  });
+  function setup() {
+    $('.overflow').each(function () {
+      var i = Math.floor(Math.random() * 5);
+      $(this).addClass(`seat-${i}`);
+    });
+
+    $('.section')
+      .eq(14)
+      .find('.is-red')
+      .eq(18)
+      .append(
+        $('<img>').attr(
+          'src',
+          'https://p195.p4.n0.cdn.getcloudapp.com/items/bLuwrBWw/image-removebg-preview%20(2).png?v=ae814620687836d2e121a9197e5a5f8c',
+        ),
+      );
+  }
 
   $('.red').removeClass('red');
 
@@ -12,10 +25,8 @@ $.page('index', function () {
 
   $('#go button').click(function () {
     $('#body-parent').load('/?text=' + $('#text').val() + ' #body', () => {
-      $('.overflow').each(function () {
-        var i = Math.floor(Math.random() * 5);
-        $(this).addClass(`seat-${i}`);
-      });
+      setup();
+
       $('#go').remove();
       setTimeout(function () {
         $('audio')[0].play();
@@ -86,15 +97,4 @@ $.page('index', function () {
     }
     next(start);
   }
-
-  $('.section')
-    .eq(14)
-    .find('.is-red')
-    .eq(18)
-    .append(
-      $('<img>').attr(
-        'src',
-        'https://p195.p4.n0.cdn.getcloudapp.com/items/bLuwrBWw/image-removebg-preview%20(2).png?v=ae814620687836d2e121a9197e5a5f8c',
-      ),
-    );
 });
