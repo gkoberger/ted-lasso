@@ -3,11 +3,6 @@ extends layout
 block content
   h1 Ted Lasso Intro Generator
 
-  form(method="GET")
-    input(type="text" value=text name="text")
-    button(type="submit") GO
-  br
-
   audio(src="/images/music.mp3")
 
   mixin section(t)
@@ -18,10 +13,12 @@ block content
             .chair(class=on(t, r, c))
               .overflow
 
-  #body
-    #go
-      button Play!
-    for l in [0,1,2]
-      .line
-        for t in out
-          +section((l === 1 ? t : ''))
+  #body-parent
+    #body
+      #go
+        input#text(type=text value="TED!")
+        button Play!
+      for l in [0,1,2]
+        .line
+          for t in out
+            +section((l === 1 ? t : ''))
