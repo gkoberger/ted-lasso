@@ -6,6 +6,9 @@
     "ngrok": "ngrok http 3440 --subdomain='.js'",
     "start": "./node_modules/.bin/nodemon ./bin/www"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "dependencies": {
     "asciimo": "^0.3.1",
     "body-parser": "~1.15.2",
